@@ -1,0 +1,70 @@
+{
+  "history": [
+    {
+      "id": 1,
+      "createdDate": 1545382655431,
+      "modifiedDate": 1545382670192,
+      "amount": 12.3,
+      "title": "Stripe",
+      "category": "sales",
+      "remarks": "",
+      "depositorId": "uid18263512",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "createdDate": 1545383651431,
+      "modifiedDate": 1545342610192,
+      "amount": 5,
+      "title": "Uber",
+      "category": "Transport",
+      "remarks": "",
+      "depositorId": "uid18263513",
+      "status": 1
+    },
+    {
+      "id": 3,
+      "createdDate": 1545382644431,
+      "modifiedDate": 1545341970192,
+      "amount": 22.1,
+      "title": "WeWork",
+      "category": "Office Rental",
+      "remarks": "refund pending",
+      "depositorId": "uid18263514",
+      "status": 1
+    },
+    {
+      "id": 4,
+      "createdDate": 1545382655431,
+      "modifiedDate": 1545341370192,
+      "amount": 18.8,
+      "title": "Google Adwords",
+      "category": "marketing",
+      "remarks": "",
+      "depositorId": "uid18263515",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "createdDate": 1545382355431,
+      "modifiedDate": 1545341770192,
+      "amount": 103,
+      "title": "Envato Market",
+      "category": "marketing",
+      "remarks": "",
+      "depositorId": "uid18263515",
+      "status": 1
+    },
+    {
+      "id": 6,
+      "createdDate": 1545382455431,
+      "modifiedDate": 1545342670192,
+      "amount": 103,
+      "title": "Facebook Ads",
+      "category": "marketing",
+      "remarks": "Refunded",
+      "depositorId": "uid18263516",
+      "status": 0
+    }
+  ]
+}

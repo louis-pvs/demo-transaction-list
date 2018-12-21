@@ -1,6 +1,6 @@
 const express = require("express");
-
 const webpack = require("webpack");
+const proxy = require("http-proxy-middleware");
 // webpack plugins and middlewares
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
@@ -14,6 +14,7 @@ const config = require("../webpack.config")({}, { mode: "development" });
 
 // configure server port:
 const PORT = process.env.PORT || 3000;
+const API_PORT = process.env.API_PORT || 3001;
 
 // invoking it is neccessary
 // in webpack.config.js are exported using function
@@ -44,6 +45,11 @@ const app = express();
 app
   .use(devMiddleware)
   .use(webpackHotMiddleware(compiler, { log: false }))
+  // pointing to the correct proxy
+  .use(
+    "/api",
+    proxy({ target: `http://localhost:${API_PORT}`, changeOrigin: true })
+  )
   .get("/", (req, res, next) => {
     // error occored during run time if not using relative path
     compiler.outputFileSystem.readFile("./index.html", (err, result) => {
@@ -54,3 +60,7 @@ app
     });
   })
   .listen(PORT);
+
+// start a server to mock database
+const apiServer = express();
+require("./mockDbServer")(apiServer, API_PORT);
