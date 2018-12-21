@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const DIST_DIR = path.join(__dirname, "/dist/client");
+const SRC_DIR = path.join(__dirname, "/client");
 
 // comparing to webpack early version, configs file has become much simpler
 // splitting them into different file for your own convenient if needed
@@ -21,7 +22,7 @@ module.exports = (env, args) => {
         // remove `&quite=true` if you need console log when hot reload occur
         "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true&quiet=true&overlayWarning=true",
         // using explicit path for entry, to avoid error occour in compilation
-        "./src/index.js"
+        path.join(SRC_DIR, "/index.js")
       ]
     },
     devtool: "inline-source-map",
@@ -46,7 +47,7 @@ module.exports = (env, args) => {
   const prodConfig = {
     mode: "production",
     entry: {
-      main: "./src/index.js"
+      main: path.join(SRC_DIR, "/index.js")
     },
     optimization: {
       noEmitOnErrors: true,
@@ -98,7 +99,7 @@ module.exports = (env, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.ejs",
+        template: path.join(SRC_DIR, "/index.ejs"),
         title: "Secure payment",
         filename: path.join(DIST_DIR, "/index.html"),
         excludeChunks: ["server"]
