@@ -93,11 +93,13 @@ module.exports = (env, args) => {
         }
       ]
     },
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.ejs",
-        title: "louis-vincent.me",
-        author: "Louis.P",
+        title: "Secure payment",
         filename: path.join(DIST_DIR, "/index.html"),
         excludeChunks: ["server"]
       })

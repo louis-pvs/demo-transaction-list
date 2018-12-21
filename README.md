@@ -27,7 +27,7 @@ yarn start
 ### Goal
 
 - [ ] Use an appropriate API mock tool that you’re familiar with to create a JSON file with what is in your opinion a good representation of a list of financial transactions (at least 4-5 attributes for a transaction).
-- [ ] Scaffold a simple ReactJS application that uses any dependencies you might want to include in your application
+- [x] Scaffold a simple ReactJS application that uses any dependencies you might want to include in your application
 - [ ] Create a view for the list of transactions that you fetch from the mocked API. You can use Redux or any other tool for state management
 - [ ] Add a button that on click updates the state of every other transaction to REFUNDED and make sure this is visually shown as well
 - [x] Create a webpack build script that builds the application on ‘yarn start’
