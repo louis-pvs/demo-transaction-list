@@ -3,7 +3,7 @@ import ReduxThunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import axios from "axios";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "/api/",
   headers: {
     "Content-Type": "application/json"
@@ -14,7 +14,7 @@ const api = axios.create({
   }
 });
 
-import historyModel from "./history";
+import historyModel from "./reducer";
 
 const reduxMiddlewares = applyMiddleware(ReduxThunk.withExtraArgument(api));
 const devToolsWithMiddlewares = composeWithDevTools(reduxMiddlewares);

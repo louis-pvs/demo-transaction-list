@@ -1,6 +1,6 @@
 import ACTION_TYPE from "./TYPES";
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   transactionList: [],
   transactionDetail: null
 };

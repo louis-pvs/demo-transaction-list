@@ -7,7 +7,7 @@ export function getTransactionList() {
       .then(res => res.data)
       .then(actions.updateList)
       .then(dispatch)
-      .catch(_handleError);
+      .catch(err => dispatch({ type: "ERROR", payload: { err } }));
   };
 }
 
@@ -18,7 +18,7 @@ export function getTransactionDetail(id) {
       .then(res => res.data)
       .then(actions.updateSelectedDetail)
       .then(dispatch)
-      .catch(_handleError);
+      .catch(err => dispatch({ type: "ERROR", payload: { err } }));
   };
 }
 
@@ -36,10 +36,6 @@ export function refundTransaction(selectedDetail) {
       .then(res => res.data)
       .then(actions.updateSelectedDetail)
       .then(dispatch)
-      .catch(_handleError);
+      .catch(err => dispatch({ type: "ERROR", payload: { err } }));
   };
-}
-
-function _handleError(err) {
-  console.error(err);
 }

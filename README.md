@@ -32,6 +32,10 @@ yarn buil
 yarn start
 ```
 
+### Testing with jest
+
+`yarn test`
+
 ### Goal
 
 - [x] Use an appropriate API mock tool that you’re familiar with to create a JSON file with what is in your opinion a good representation of a list of financial transactions (at least 4-5 attributes for a transaction).
@@ -41,4 +45,4 @@ yarn start
 - [x] Create a webpack build script that builds the application on ‘yarn start’
 - [x] Use styled-components to show the list of transactions in a nice way
 - [ ] If you are doing this test remotely please upload your work, with instructions on how to run it on your BitBucket or GitHub account and share the link directly with us or the recruiter.
-- [ ] Optional: create a test using your favourite js testing framework that in your opinion has value for this scenario
+- [x] Optional: create a test using your favourite js testing framework that in your opinion has value for this scenario
