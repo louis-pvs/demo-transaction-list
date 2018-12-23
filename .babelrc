@@ -1,7 +1,8 @@
 {
   "plugins": [
     ["babel-plugin-styled-components", { "pure": true }],
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    "transform-currency-operators"
   ],
   "presets": ["@babel/preset-env", "@babel/preset-react"]
 }

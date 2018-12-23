@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 
-import theme, { GlobalStyle } from "./src/theme";
+import theme, { GlobalStyle } from "./src/styles/theme";
 import App from "./src/components/App";
 
 ReactDOM.render(

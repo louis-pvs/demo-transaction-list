@@ -1389,6 +1389,11 @@ babel-plugin-syntax-object-rest-spread@^6.13.0:
   resolved "http://registry.npmjs.org/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
   integrity sha1-/WU28rzhODb/o6VFjEkDpZe7O/U=
 
+babel-plugin-transform-currency-operators@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/babel-plugin-transform-currency-operators/-/babel-plugin-transform-currency-operators-1.0.1.tgz#35986a9dcea2c64459436f27f4ec16ed2e46980a"
+  integrity sha512-OIzvjKD+8nhNYIgXcS78KKPyCSWYQGeQOQy1hTJY6DaIHWxBC5pxH0xzmgu3huf0nSGZhL7IgK3oIHt42A8JtA==
+
 babel-preset-jest@^23.2.0:
   version "23.2.0"
   resolved "https://registry.npmjs.org/babel-preset-jest/-/babel-preset-jest-23.2.0.tgz#8ec7a03a138f001a1a8fb1e8113652bf1a55da46"
@@ -2227,6 +2232,11 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
+currency.js@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/currency.js/-/currency.js-1.2.1.tgz#18d42ac74d833795051f4a310c83f041013a882f"
+  integrity sha512-7t0jYDZeQYCcaxpgwNOiBz8GaG/qdqTdo+kcTYgCuCNx1p2jLMpJt8h34TJ5INtN9jhryAiLK/atmjwUf13t4A==
+
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
@@ -2252,6 +2262,11 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmjs.org/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
+
+dayjs@^1.7.8:
+  version "1.7.8"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.7.8.tgz#05d288f8d4b2140110cc1519cfe317d6f1f11a3c"
+  integrity sha512-Gp4Y5KWeSri0QOWGzHQz7VrKDkfEpS92dCLK7P8hYowRFbaym1vj3d6CoHio3apSS4KSi/qb5Edemv26IN5Hfg==
 
 debug@*, debug@^4.1.0:
   version "4.1.0"
