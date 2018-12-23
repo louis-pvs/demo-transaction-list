@@ -40,6 +40,15 @@ const StyledTd = styled.td`
     text-align: center;
     color: ${({ theme }) => theme.$color.text__light};
   }
+
+  thead & {
+    color: ${({ theme }) => theme.$color.text__light};
+    font-size: ${({ theme }) => theme.$size.sm};
+  }
+`;
+
+const StyledAmount = styled.span`
+  color: ${({ theme, status }) => (!status ? theme.$color.success : "inherit")};
 `;
 
 class TransactinList extends React.PureComponent {
@@ -73,7 +82,11 @@ class TransactinList extends React.PureComponent {
           <StyledTd>
             <StyledDateSpan>{formatDate(modifiedDate)}</StyledDateSpan>
           </StyledTd>
-          <StyledTd>{formatAmount(status ? -amount : amount)}</StyledTd>
+          <StyledTd>
+            <StyledAmount status={status}>
+              {formatAmount(status ? -amount : amount)}
+            </StyledAmount>
+          </StyledTd>
         </StyledTr>
       )
     );

@@ -22,6 +22,24 @@ export function getTransactionDetail(id) {
   };
 }
 
+export function refundTransaction(selectedDetail) {
+  return function _makeRequest(dispatch, _, api) {
+    const editedDetail = {
+      ...selectedDetail,
+      status: 0,
+      modifiedDate: new Date().getTime()
+    };
+    const { id } = editedDetail;
+
+    return api
+      .put(`history/${id}`, editedDetail)
+      .then(res => res.data)
+      .then(actions.updateSelectedDetail)
+      .then(dispatch)
+      .catch(_handleError);
+  };
+}
+
 function _handleError(err) {
   console.error(err);
 }

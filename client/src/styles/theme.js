@@ -12,6 +12,7 @@ const defaultTheme = {
     primary__dark: "#36036a",
     background: "#F7F9FB",
     background__dark: "#EEEFF2",
+    success: "#69db7c",
     border: "#eee"
   },
   $size: {

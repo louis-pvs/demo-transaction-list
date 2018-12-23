@@ -5,6 +5,9 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "/api/",
+  headers: {
+    "Content-Type": "application/json"
+  },
   proxy: {
     host: "http://localhost",
     port: 3001

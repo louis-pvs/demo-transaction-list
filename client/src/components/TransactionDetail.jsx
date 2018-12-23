@@ -6,9 +6,28 @@ import { Link } from "react-router-dom";
 
 import { formatDate, formatAmount } from "../utils";
 
-import { getTransactionDetail } from "../stateReducers/effects";
+import {
+  getTransactionDetail,
+  refundTransaction,
+  getTransactionList
+} from "../stateReducers/effects";
 import { updateSelectedDetail } from "../stateReducers/actions";
 import { StyledSection, StyledDateSpan } from "../styles";
+
+const StyledButton = styled.button`
+  background-color: ${({ theme }) => theme.$color.primary};
+  color: ${({ theme }) => theme.$color.baseWhite};
+  border: 0;
+  outline: none;
+  padding: ${({ theme }) => `${theme.$size.xs} ${theme.$size.lg}`};
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin-top: ${({ theme }) => theme.$size.lg};
+  cursor: pointer;
+  &:disabled {
+    background-color: ${({ theme }) => theme.$color.background__dark};
+  }
+`;
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -59,7 +78,9 @@ class TransactionDetail extends React.PureComponent {
       }).isRequired
     }).isRequired,
     getTransactionDetail: PropTypes.func,
-    updateSelectedDetail: PropTypes.func
+    updateSelectedDetail: PropTypes.func,
+    refundTransaction: PropTypes.func,
+    getTransactionList: PropTypes.func
   };
   static getDerivedStateFromProps(props, state) {
     if (state.transactionId !== props.match.params.id) {
@@ -80,10 +101,15 @@ class TransactionDetail extends React.PureComponent {
   componentDidMount() {
     this.props.getTransactionDetail(this.state.transactionId);
   }
+  componentDidUpdate() {
+    this.props.getTransactionList();
+  }
   componentWillUnmount() {
     this.props.updateSelectedDetail(null);
   }
-
+  handleClick = () => {
+    this.props.refundTransaction(this.state.transactionDetail);
+  };
   render() {
     const { transactionDetail } = this.state;
     if (!transactionDetail) return null;
@@ -102,6 +128,11 @@ class TransactionDetail extends React.PureComponent {
             </StyledAmount>
             <StyledCategory>{title}</StyledCategory>
             <StyledBadge>{category}</StyledBadge>
+            <div>
+              <StyledButton disabled={!status} onClick={this.handleClick}>
+                refund
+              </StyledButton>
+            </div>
           </StyledSection>
         </div>
       </StyledWrapper>
@@ -116,5 +147,10 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   // map action to props
-  { getTransactionDetail, updateSelectedDetail }
+  {
+    getTransactionDetail,
+    updateSelectedDetail,
+    refundTransaction,
+    getTransactionList
+  }
 )(TransactionDetail);
