@@ -1,0 +1,4 @@
+export default {
+  INITIAL_ALL: "INITIAL_ALL",
+  UPDATE_STATE: "UPDATE_STATE"
+};

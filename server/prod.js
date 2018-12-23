@@ -19,7 +19,7 @@ app
     "/api",
     proxy({ target: `http://localhost:${API_PORT}`, changeOrigin: true })
   )
-  .get("/", (req, res) => res.sendFile(HTML_FILE))
+  .use("*", (_, res) => res.sendFile(HTML_FILE))
   .listen(PORT, () => {
     console.log(`App listening to ${PORT}`);
     console.log("Press Ctrl+C to quit");

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 
 import theme, { GlobalStyle } from "./src/theme";
-import App from "./src/App";
+import App from "./src/components/App";
 
 ReactDOM.render(
   <Fragment>

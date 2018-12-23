@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const webpack = require("webpack");
 const proxy = require("http-proxy-middleware");
@@ -44,15 +45,16 @@ const app = express();
 
 app
   .use(devMiddleware)
-  .use(webpackHotMiddleware(compiler, { log: false }))
+  .use(webpackHotMiddleware(compiler, { log: false, publicPath: "/" }))
   // pointing to the correct proxy
   .use(
     "/api",
     proxy({ target: `http://localhost:${API_PORT}`, changeOrigin: true })
   )
-  .get("/", (req, res, next) => {
+  .use("*", (req, res, next) => {
+    var filename = path.join(compiler.outputPath, "index.html");
     // error occored during run time if not using relative path
-    compiler.outputFileSystem.readFile("./index.html", (err, result) => {
+    compiler.outputFileSystem.readFile(filename, (err, result) => {
       if (err) return next(err);
       res.set("content-type", "text/html");
       res.send(result);
