@@ -9,6 +9,7 @@ export const StyledSection = styled.section`
   margin: ${({ theme }) => theme.$size.xs};
   padding: ${({ theme }) => theme.$size.reg};
   vertical-align: top;
+  overflow-x: scroll;
 `;
 
 export const StyledDateSpan = styled.span`
