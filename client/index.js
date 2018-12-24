@@ -15,6 +15,18 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+if (
+  process.env.NODE_ENV === "production" &&
+  typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === "object"
+) {
+  for (let [key, value] of Object.entries(
+    window.__REACT_DEVTOOLS_GLOBAL_HOOK__
+  )) {
+    window.__REACT_DEVTOOLS_GLOBAL_HOOK__[key] =
+      typeof value == "function" ? () => {} : null;
+  }
+}
+
 if (typeof module.hot !== "undefined") {
   module.hot.accept();
 }
